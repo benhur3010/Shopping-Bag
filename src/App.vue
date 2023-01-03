@@ -1,19 +1,18 @@
 <template>
   <div id="nav">
     <router-link to="/">Início</router-link> -
-    <router-link to="/basket">Carrinho (0)</router-link> 
+    <router-link to="/basket">Carrinho (0)</router-link>
   </div>
-  <router-view/>
+  <router-view />
 </template>
 
 <script>
-
-  export default {
-
+export default {
+  created() {
+    this.$store.dispatch('loadProducts')
   }
-  
+};
 </script>
-
 
 <style lang="scss">
 #app {
@@ -36,7 +35,6 @@
   text-align: center;
   background-color: rgb(37, 37, 37);
   color: white;
-
 
   a {
     color: white;
